@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All In One Productivity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="doc.css">
+    <link rel="author" href="humans.txt">
+    <link rel="icon" href="./img/favicon.ico">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <a href="index.html">
+        <div class="logo-container">
+          <img src="./img/favicon.ico" width="40px" height="40px" class="logo-img">
+          <h1 class="logo">All In One Productivity<span style="font-weight: 200;"> Docs</span></h1>
+        </div>
+      </a>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        <li class="menu__item"><a href="https://github.com/PrintN/All-In-One-Productivity" target="_blank" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li class="js-btn selected">Get Started</li>
+          <li class="js-btn">Configuration</li>
+          <li class="js-btn">Extensions</li>
+          <li class="js-btn">Issues</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <section class="js-section">
+          <h3 class="section__title">Get Started</h3>
+          <p>Learn how to configure All In One Productivity</p>
+          <h3 class="section__title">Installation</h3>
+          <div class="installation">
+            <div class="tab__container">
+              <ul class="tab__menu">
+                <li class="tab active" data-tab="Windows">Windows</li>
+                <li class="tab" data-tab="MacOS">MacOS</li>
+                <li class="tab" data-tab="Linux">Linux</li>
+              </ul>
+              <pre class="nohighlight code">
+                <div class="tab__pane active Windows"><a href="https://github.com/PrintN/All-In-One-Productivity/releases/download/v1.0.1/All.In.One.Productivity_1.0.1_x64_en-US.msi" class="download-link" download> Windows 64 bit</a></div>
+                <code class="tab__pane Linux">Coming Soon for Linux</code>
+                <code class="tab__pane MacOS">Coming Soon for MacOS</code>
+              </pre>
+            </div>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Configuration</h3>
+          <p>Learn how to configure settings for All In One Productivity.</p>
+          <table id="customers">
+            <tr>
+              <th>Options</th>
+              <th>Value</th>
+              <th>Default</th>
+            </tr>
+            <tr>
+              <td>orem ipsum dolor sit amet, scripta tibique indoctum sit </td>
+              <td>orem ipsum dolor sit amet, scripta tibique indoctum sit </td>
+              <td>orem ipsum dolor sit amet, scripta tibique indoctum sit </td>
+            </tr>
+            <tr>
+              <td>orem ipsum dolor sit amet, scripta tibique indoctum sit </td>
+              <td>orem ipsum dolor sit amet, scripta tibique indoctum sit .</td>
+              <td>orem ipsum dolor sit amet, scripta tibique indoctum sit </td>
+            </tr>
+            <tr>
+              <td>orem ipsum dolor sit amet, scripta tibique indoctum sit </td>
+              <td>orem ipsum dolor sit amet, scripta tibique indoctum sit .</td>
+              <td>orem ipsum dolor sit amet, scripta tibique indoctum sit </td>
+            </tr>
+          </table>
+          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <hr />
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Extensions</h3>
+          <p>All In One Productivity supports extending the app with extensions.</p>
+          <div style="border: 1px solid #000;border-radius: 10px;padding: 10px;">
+            <h4>Uploading extensions</h4>
+            <h4>Prerequesities:</h5>
+            <p>You must make sure you have a directory with the following files:</p>
+            <li>1 .json file</li>
+            <li>1 index.html file</li>
+            <h4>Uploading the extension to All In One Productivity</h5>
+            <li>Go to Extensions</li>
+            <li>Click the "Upload Extension" button</li>
+            <li>Select the directory of the extension you want to upload</li>
+            <li>Once uploaded click the activate button to activate the extension</li>
+          </div>
+          <div style="border: 1px solid #000;border-radius: 10px;padding: 10px;">
+            <h4>Developing extensions</h4>
+            <p>1. We're starting with creating a directory where our files are going to be.</p>
+            <p>2. CD into the directory</p>
+            <p>3. Create a .json file and paste this code into it and fill in the missing fields, NOTE: By the "iconClass" field you have to use <a href="https://remixicon.com" target="_blank" style="color: var(--accent-color);font-weight: 600;">remixicons</a></p>
+            <pre class="nohighlight code">
+<code>{"name": "",
+  "description": "",
+  "author": "",
+  "creationDate": "",
+  "version": "",
+  "iconClass": ""}</code>
+            </pre>
+            <p>4. Create a .html file called "index.html" in the .html file you can start writing the extension and what it should do.</p>
+            <pre class="nohighlight code">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+      &lt;title&gt;Test Extension&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;h1 style=&quot;color: #fff;&quot;&gt;Hello World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+              </pre>
+              <h4>Integrating the All In One Productivity API in extensions (BETA)</h4>
+              <p>To use the All In One Productivity API you must first import the Tauri API library in your extension.</p>
+              <pre class="nohighlight code">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+      &lt;title&gt;Test Extension&lt;/title&gt;
+      &lt;script&gt; src="https://cdn.jsdelivr.net/npm/@tauri-apps/api@latest/tauri.js"&lt;/script&gt; // Import Tauri API
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;h1 style=&quot;color: #fff;&quot;&gt;Hello World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+              </pre>            
+          </div>
+
+          <hr />
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Issues</h3>
+          <p>Found an issue or bug in the app? Then we would be more than grateful if you reported it <a href="https://github.com/PrintN/All-In-One-Productivity/issues" target="_blank" style="color: var(--accent-color);font-weight: 600;">here</a> and we will try to fix it.</p>
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer">Made with 💙 by <a href="https://github.com/PrintN" target="_blank" class="link link--light">PrintN</a></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="main.js"></script>
+  </body>
+</html>
