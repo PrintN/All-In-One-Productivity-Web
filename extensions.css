@@ -1,0 +1,81 @@
+/* nav specialized to landing page */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--code-bg-color);
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-img {
+    margin-left: 20px; /* Adjust the space between the image and the heading as needed */
+  }
+  
+  .logo {
+    font-weight: 900;
+    color: var(--primary-color);
+    font-size: 1.4em;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu__item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .menu__item.toggle {
+    padding: 1.5rem 1rem;
+  }
+  
+
+.marketplace {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-around;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+.extension {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+    width: 23%;
+}
+.extension img {
+    max-width: 100%;
+    height: auto;
+}
+.extension h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.extension p {
+    font-size: 14px;
+    color: #555;
+}
+.extension button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+.extension button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Greet", 
+    "description": "An extension that says hello.",
+    "author": "PrintN",
+    "creationDate": "17/07/2024",
+    "version": "1.1", 
+    "iconClass": "ri-file-text-line"
+}

@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>All In One Productivity</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="doc.css">
@@ -24,6 +24,8 @@
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
         <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        <li class="menu__item"><a href="doc.html" class="link link--dark"><i class="fa fa-book"></i> Documentation</a></li>
+        <li class="menu__item"><a href="extensions.html" class="link link--dark"><i class="fa fa-search"></i> Marketplace</a></li>
         <li class="menu__item"><a href="https://github.com/PrintN/All-In-One-Productivity" target="_blank" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
       </ul>
     </nav>
@@ -31,7 +33,6 @@
       <aside class="doc__nav">
         <ul>
           <li class="js-btn selected">Get Started</li>
-          <li class="js-btn">Configuration</li>
           <li class="js-btn">Extensions</li>
           <li class="js-btn">Issues</li>
         </ul>
@@ -54,9 +55,7 @@
                 <code class="tab__pane MacOS">Coming Soon for MacOS</code>
               </pre>
             </div>
-        </section>
-        <section class="js-section">
-          <h3 class="section__title">Configuration</h3>
+            <h3 class="section__title">Configuration</h3>
           <p>Learn how to configure settings for All In One Productivity.</p>
           <table id="customers">
             <tr>
@@ -126,20 +125,39 @@
 &lt;/html&gt;</code>
               </pre>
               <h4>Integrating the All In One Productivity API in extensions (BETA)</h4>
-              <p>To use the All In One Productivity API you must first import the Tauri API library in your extension.</p>
+              <p>To use the All In One Productivity API you can do that by using the Tauri API function "invoke" in your extension code. Here is an example of use of the invoke where we use the command greet.</p>
               <pre class="nohighlight code">
 <code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-  &lt;head&gt;
-      &lt;meta charset=&quot;UTF-8&quot;&gt;
-      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-      &lt;title&gt;Test Extension&lt;/title&gt;
-      &lt;script&gt; src="https://cdn.jsdelivr.net/npm/@tauri-apps/api@latest/tauri.js"&lt;/script&gt; // Import Tauri API
-  &lt;/head&gt;
-  &lt;body&gt;
-      &lt;h1 style=&quot;color: #fff;&quot;&gt;Hello World!&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code>
+&lt;html lang="en"&gt; 
+&lt;head&gt;  
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;script&gt;
+        document.addEventListener('DOMContentLoaded', () =&gt; {
+            document.getElementById('greetButton').addEventListener('click', () =&gt; {
+                window.parent.postMessage(
+                    { type: 'TAURI_INVOKE', command: 'greet', payload: { name: 'Extension' } },
+                    '*'
+                );
+            });
+
+            window.addEventListener('message', (event) =&gt; {
+                if (event.data.type === 'TAURI_INVOKE_RESPONSE') {
+                    document.getElementById('greetResponse').innerText = event.data.response;
+                } else if (event.data.type === 'TAURI_INVOKE_ERROR') {
+                    document.getElementById('greetResponse').innerText = 'Error: ' + event.data.error;
+                }
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 style="color: #fff;"&gt;Extension Test&lt;/h1&gt;
+    &lt;button id="greetButton"&gt;Invoke Greet&lt;/button&gt;
+    &lt;p id="greetResponse" style="color: #fff;"&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </code>
               </pre>            
           </div>
 
